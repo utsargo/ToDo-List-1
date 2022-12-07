@@ -15,27 +15,28 @@ const ToDoData = [
         completed: false,
     },
     {
-        index: 2,
+        index: 3,
         descripttion: "Chat with Aliens",
         completed: false,
     },
     {
-        index: 3,
+        index: 4,
         descripttion: "Hack someone's Bank Account",
         completed: false,
     },
     {
-        index: 4,
+        index: 2,
         descripttion: "Wait for PR to be Approved",
         completed: false,
     },
 ]
 
+ToDoData.sort((a, b) => a.index - b.index);
+
 ListData.innerHTML = ""
 
 
-
-
+    
     ToDoData.forEach(element => {
         ListData.innerHTML +=`
         <div class="mainlist">
@@ -45,5 +46,10 @@ ListData.innerHTML = ""
         </div>
        `
     });
+  
+
+
+
+
 
 
