@@ -1,3 +1,5 @@
+ /* eslint-disable */
+
 "use strict";
 (self["webpackChunkto_do_list"] = self["webpackChunkto_do_list"] || []).push([[0],[
 /* 0 */
@@ -22,12 +24,12 @@ const ToDoData = [
         completed: false,
     },
     {
-        index: 2,
+        index: 3,
         descripttion: "Chat with Aliens",
         completed: false,
     },
     {
-        index: 3,
+        index: 2,
         descripttion: "Hack someone's Bank Account",
         completed: false,
     },
@@ -38,11 +40,12 @@ const ToDoData = [
     },
 ]
 
+ToDoData.sort((a, b) => a.index - b.index);
+
 ListData.innerHTML = ""
 
 
-
-
+    
     ToDoData.forEach(element => {
         ListData.innerHTML +=`
         <div class="mainlist">
@@ -52,6 +55,11 @@ ListData.innerHTML = ""
         </div>
        `
     });
+  
+
+
+
+
 
 
 
