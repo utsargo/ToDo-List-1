@@ -1,5 +1,3 @@
- /* eslint-disable */
-
 "use strict";
 (self["webpackChunkto_do_list"] = self["webpackChunkto_do_list"] || []).push([[0],[
 /* 0 */
@@ -14,37 +12,49 @@ const ListData = document.querySelector('.lists');
 
 const ToDoData = [
     {
-        index: 1,
-        descripttion: "Wash Car",
+        index: 0,
+        descripttion: "Wash Laptop with Detergent",
         completed: false,
     },
     {
-        index: 4,
-        descripttion: "Wash Car",
+        index: 1,
+        descripttion: "Inject Bug in Facebook Server",
         completed: false,
     },
     {
         index: 2,
-        descripttion: "Wash Car",
+        descripttion: "Chat with Aliens",
         completed: false,
     },
     {
         index: 3,
-        descripttion: "Wash Car",
+        descripttion: "Hack someone's Bank Account",
         completed: false,
     },
     {
-        index: 5,
-        descripttion: "Wash Car",
+        index: 4,
+        descripttion: "Wait for PR to be Approved",
         completed: false,
     },
 ]
 
-ToDoData.forEach(element => {
-    ListData.innerHTML +=`
-    ${element.descripttion}
-    `
-});
+ListData.innerHTML = ""
+
+
+
+
+    ToDoData.forEach(element => {
+        ListData.innerHTML +=`
+        <div class="mainlist">
+        <input type="checkbox" class="check">
+        <p class="listitem">${element.descripttion}</p>
+        <i id="moreicon" class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+       `
+    });
+
+
+
 
 /***/ }),
 /* 1 */
@@ -395,7 +405,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\n    font-family: sans-serif;\n}\n\nbody {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    height: 100vh;\n    background: rgb(244, 244, 244);\n     \n}\n\n.todo-list {\n    box-shadow: 0 4px 4px 4px rgba(216, 216, 216, 0.762);\n    border: 0.2px solid rgba(216, 216, 216, 0.762);\n    width: 70vw;\n    background: white;\n}\n\nh3 {\n    padding: 3% 0;\n    font-size: 1.2rem;\n    margin: 0;\n    color: rgb(119, 119, 119);\n    font-weight: 600;\n}\n\n.lists {\n    list-style: none;\n    padding-left: 0;\n}\n\n.add-to-list {\n    outline: none;\n    width: 90%;\n    border: none;\n    background: none;\n    font-style: italic;\n    font-size: 1.2rem;\n    padding: 2% 0;\n}\n\n\nhr {\n    border: 0.5px solid rgba(222, 222, 222, 0.762);\n    margin: 0;\n}\n\n.inputcontainer {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n}\n\n.material-icons{\n    color: gray;\n    font-size: 1.2rem;\n    margin-right: 3%;\n}\n\n.clear-all {\n    width: 100%;\n    margin: 0;\n    padding: 2%;\n    text-align: center;\n    background: rgba(239, 239, 239, 0.887);\n    border: none;\n    color: rgb(97, 97, 97);\n    font-size: 1rem;\n}\n\nh3,\ninput {\n    margin-left: 4% !important;\n}\n\n.mainlist {\n    padding: 3% 0;\n    border-bottom: 0.5px solid rgba(207, 207, 207, 0.762);\n    font-size: 1rem;\n    display: flex;\n    align-items: center;\n}\n\ninput.check{\n    width: 1rem;\n    height: 1rem;\n    margin-right: 2%;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\n  font-family: sans-serif;\n}\n\nbody {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  background: rgb(244, 244, 244);\n}\n\n.todo-list {\n  box-shadow: 0 4px 4px 4px rgba(216, 216, 216, 0.762);\n  border: 0.2px solid rgba(216, 216, 216, 0.762);\n  width: 70vw;\n  background: white;\n  margin-top: 10vh;\n}\n\nh3 {\n  padding: 3% 0;\n  font-size: 1.2rem;\n  margin: 0;\n  color: rgb(119, 119, 119);\n  font-weight: 600;\n  width: 90.1%;\n}\n\n.lists {\n  display: flex;\n  flex-direction: column;\n}\n\n.add-to-list {\n  outline: none;\n  width: 90%;\n  border: none;\n  background: none;\n  font-style: italic;\n  font-size: 1.2rem;\n  padding: 2% 0;\n}\n\nhr {\n  border: 0.5px solid rgba(222, 222, 222, 0.762);\n  margin: 0;\n}\n\n.inputcontainer {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n}\n\n#refresh,\n#moreicon,\n.material-icons {\n  color: gray;\n  font-size: 1.2rem;\n  margin-right: 3%;\n}\n\n.titleholder {\n  display: flex;\n  align-items: center;\n}\n\n.clear-all {\n  width: 100%;\n  margin: 0;\n  padding: 2%;\n  text-align: center;\n  background: rgba(239, 239, 239, 0.887);\n  border: none;\n  color: rgb(97, 97, 97);\n  font-size: 1rem;\n}\n\nh3,\ninput {\n  margin-left: 4% !important;\n}\n\n.mainlist {\n  padding: 1% 0;\n  border-bottom: 0.5px solid rgba(207, 207, 207, 0.762);\n  font-size: 1rem;\n  display: flex;\n  align-items: center;\n}\n\ninput.check {\n  width: 1rem;\n  height: 1rem;\n  margin-right: 2%;\n}\n\n.listitem {\n  width: 87%;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
