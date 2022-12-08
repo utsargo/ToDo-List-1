@@ -1,63 +1,12 @@
- /* eslint-disable */
-
-"use strict";
 (self["webpackChunkto_do_list"] = self["webpackChunkto_do_list"] || []).push([[0],[
 /* 0 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-
-
-
-const ListData = document.querySelector('.lists');
-
-const ToDoData = [
-    {
-        index: 0,
-        descripttion: "Wash Laptop with Detergent",
-        completed: false,
-    },
-    {
-        index: 1,
-        descripttion: "Inject Bug in Facebook Server",
-        completed: false,
-    },
-    {
-        index: 3,
-        descripttion: "Chat with Aliens",
-        completed: false,
-    },
-    {
-        index: 2,
-        descripttion: "Hack someone's Bank Account",
-        completed: false,
-    },
-    {
-        index: 4,
-        descripttion: "Wait for PR to be Approved",
-        completed: false,
-    },
-]
-
-ToDoData.sort((a, b) => a.index - b.index);
-
-ListData.innerHTML = ""
-
-
-    
-    ToDoData.forEach(element => {
-        ListData.innerHTML +=`
-        <div class="mainlist">
-        <input type="checkbox" class="check">
-        <p class="listitem">${element.descripttion}</p>
-        <i id="moreicon" class="fa-solid fa-ellipsis-vertical"></i>
-        </div>
-       `
-    });
-  
-
-
+/* harmony import */ var _modules_crud_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
+/* harmony import */ var _modules_crud_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_crud_js__WEBPACK_IMPORTED_MODULE_1__);
 
 
 
@@ -68,6 +17,7 @@ ListData.innerHTML = ""
 /* 1 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -118,6 +68,7 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 /* 2 */
 /***/ ((module) => {
 
+"use strict";
 
 
 var stylesInDOM = [];
@@ -227,6 +178,7 @@ module.exports = function (list, options) {
 /* 3 */
 /***/ ((module) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -302,6 +254,7 @@ module.exports = domAPI;
 /* 4 */
 /***/ ((module) => {
 
+"use strict";
 
 
 var memo = {};
@@ -346,6 +299,7 @@ module.exports = insertBySelector;
 /* 5 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -363,6 +317,7 @@ module.exports = setAttributesWithoutAttributes;
 /* 6 */
 /***/ ((module) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -379,6 +334,7 @@ module.exports = insertStyleElement;
 /* 7 */
 /***/ ((module) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -400,6 +356,7 @@ module.exports = styleTagTransform;
 /* 8 */
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -413,7 +370,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\n  font-family: sans-serif;\n}\n\nbody {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  background: rgb(244, 244, 244);\n}\n\n.todo-list {\n  box-shadow: 0 4px 4px 4px rgba(216, 216, 216, 0.762);\n  border: 0.2px solid rgba(216, 216, 216, 0.762);\n  width: 70vw;\n  background: white;\n  margin-top: 10vh;\n}\n\nh3 {\n  padding: 3% 0;\n  font-size: 1.2rem;\n  margin: 0;\n  color: rgb(119, 119, 119);\n  font-weight: 600;\n  width: 90.1%;\n}\n\n.lists {\n  display: flex;\n  flex-direction: column;\n}\n\n.add-to-list {\n  outline: none;\n  width: 90%;\n  border: none;\n  background: none;\n  font-style: italic;\n  font-size: 1.2rem;\n  padding: 2% 0;\n}\n\nhr {\n  border: 0.5px solid rgba(222, 222, 222, 0.762);\n  margin: 0;\n}\n\n.inputcontainer {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n}\n\n#refresh,\n#moreicon,\n.material-icons {\n  color: gray;\n  font-size: 1.2rem;\n  margin-right: 3%;\n}\n\n.titleholder {\n  display: flex;\n  align-items: center;\n}\n\n.clear-all {\n  width: 100%;\n  margin: 0;\n  padding: 2%;\n  text-align: center;\n  background: rgba(239, 239, 239, 0.887);\n  border: none;\n  color: rgb(97, 97, 97);\n  font-size: 1rem;\n}\n\nh3,\ninput {\n  margin-left: 4% !important;\n}\n\n.mainlist {\n  padding: 1% 0;\n  border-bottom: 0.5px solid rgba(207, 207, 207, 0.762);\n  font-size: 1rem;\n  display: flex;\n  align-items: center;\n}\n\ninput.check {\n  width: 1rem;\n  height: 1rem;\n  margin-right: 2%;\n}\n\n.listitem {\n  width: 87%;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\n  font-family: sans-serif;\n}\n\nbody {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  background: rgb(244, 244, 244);\n}\n\n.todo-list {\n  box-shadow: 0 4px 4px 4px rgba(216, 216, 216, 0.762);\n  border: 0.2px solid rgba(216, 216, 216, 0.762);\n  width: 70vw;\n  background: white;\n  margin-top: 10vh;\n}\n\nh3 {\n  padding: 3% 0;\n  font-size: 1.2rem;\n  margin: 0;\n  color: rgb(119, 119, 119);\n  font-weight: 600;\n  width: 90.1%;\n}\n\n.lists {\n  display: flex;\n  flex-direction: column;\n}\n\n.add-to-list {\n  outline: none;\n  width: 90%;\n  border: none;\n  background: none;\n  font-style: italic;\n  font-size: 1.2rem;\n  padding: 2% 0;\n}\n\nhr {\n  border: 0.5px solid rgba(222, 222, 222, 0.762);\n  margin: 0;\n}\n\n.inputcontainer {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n}\n\n#refresh, #removeicon,\n.material-icons {\n  color: gray;\n  font-size: 1.2rem;\n  margin-right: 3%;\n  cursor: pointer;\n}\n\n.save, .edit{\n  margin-right: 1%;\n  color: rgb(34, 45, 79);\n}\n\nbutton,\ninput[type=checkbox] {\n  cursor: pointer;\n}\n\n.titleholder {\n  display: flex;\n  align-items: center;\n}\n\n.clear-all {\n  width: 100%;\n  margin: 0;\n  padding: 2%;\n  text-align: center;\n  background: rgba(239, 239, 239, 0.887);\n  border: none;\n  color: rgb(97, 97, 97);\n  font-size: 1rem;\n}\n\nh3,\ninput {\n  margin-left: 4% !important;\n}\n\n.mainlist {\n  padding: 1% 0;\n  border-bottom: 0.5px solid rgba(207, 207, 207, 0.762);\n  font-size: 1rem;\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n}\n\ninput.check {\n  width: 1rem;\n  height: 1rem;\n}\n\n.listitem {\n  width: 80%;\n  border: none;\n  outline: none;\n  font-size: 1rem;\n  background: transparent;\n}\n\n.save{\n  display: none;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -422,6 +379,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, "* {\n  font-family: sans-serif;\n}\n\n
 /* 9 */
 /***/ ((module) => {
 
+"use strict";
 
 
 module.exports = function (i) {
@@ -432,6 +390,7 @@ module.exports = function (i) {
 /* 10 */
 /***/ ((module) => {
 
+"use strict";
 
 
 /*
@@ -517,6 +476,115 @@ module.exports = function (cssWithMappingToString) {
   };
   return list;
 };
+
+/***/ }),
+/* 11 */
+/***/ (() => {
+
+const ListData = document.querySelector(".lists");
+const InputField = document.querySelector(".add-to-list");
+
+let completed = false,
+  index = 0;
+let ToDoData = [];
+
+InputField.addEventListener("keypress", (e) => {
+  if (e.key === "Enter" && InputField.value.length != 0) {
+    let storedData = localStorage.getItem("To-Do");
+
+    if (storedData === null) {
+      ToDoData = [];
+    } else {
+      ToDoData = JSON.parse(storedData);
+      index = ToDoData.length === 0 ? 0 : ToDoData.length;
+    }
+
+    const LocalData = {
+      index: index,
+      description: InputField.value,
+      completed: completed,
+    };
+    ToDoData.push(LocalData);
+    localStorage.setItem("To-Do", JSON.stringify(ToDoData));
+    addToList();
+  }
+});
+
+function addToList() {
+  ListData.innerHTML = "";
+  ToDoData.forEach((element) => {
+    ListData.innerHTML += `
+  <div class="mainlist">
+  <input type="checkbox" class="check">
+  <input class="listitem" id="list${element.index}" value="${element.description}" readonly>
+  <i class="fa-solid fa-pen-to-square edit " id="edit${element.index}" onclick="editList(${element.index});"></i>
+       <i class="fa-solid fa-floppy-disk save hide" id="save${element.index}" onclick="saveList(${element.index});"></i>
+  <i id="removeicon" onclick="Remove(${element.index});" class="fa-solid fa-trash"></i>
+  </div>
+ `;
+    InputField.value = "";
+  });
+}
+
+window.editList = (index) => {
+  const editBtn = document.getElementById("edit" + index + "");
+  const saveBtn = document.getElementById("save" + index + "");
+
+  saveBtn.style.display = "block";
+  editBtn.style.display = "none";
+  const specList = document.getElementById("list" + index + "");
+  specList.removeAttribute("readonly");
+  const length = specList.value.length;
+  specList.setSelectionRange(length, length);
+  specList.focus();
+  return specList;
+};
+
+window.saveList = (index) => {
+  const editBtn = document.getElementById("edit" + index + "");
+  const saveBtn = document.getElementById("save" + index + "");
+
+  saveBtn.style.display = "none";
+  editBtn.style.display = "block";
+
+  const specList = document.getElementById("list" + index + "");
+  let storedData = localStorage.getItem("To-Do");
+  ToDoData = JSON.parse(storedData);
+  ToDoData[index].description = specList.value;
+
+  localStorage.setItem("To-Do", JSON.stringify(ToDoData));
+  addToList();
+};
+
+window.Remove = (index) => {
+  let storedData = localStorage.getItem("To-Do");
+  ToDoData = JSON.parse(storedData);
+  ToDoData.splice(index, 1);
+  for (let i = 0; i < ToDoData.length; i++) {
+    ToDoData[i].index = i;
+  }
+
+  localStorage.setItem("To-Do", JSON.stringify(ToDoData));
+  addToList();
+};
+
+window.onload = () => {
+  if (localStorage.getItem("To-Do")) {
+    ToDoData = JSON.parse(localStorage.getItem("To-Do"));
+  }
+  ToDoData.forEach((element) => {
+    ListData.innerHTML += `
+    <div class="mainlist">
+    <input type="checkbox" class="check">
+    <input class="listitem" id="list${element.index}" value="${element.description}" readonly>
+    <i class="fa-solid fa-pen-to-square edit " id="edit${element.index}" onclick="editList(${element.index});"></i>
+         <i class="fa-solid fa-floppy-disk save hide" id="save${element.index}" onclick="saveList(${element.index});"></i>
+    <i id="removeicon" onclick="Remove(${element.index});" class="fa-solid fa-trash"></i>
+    </div>
+   `;
+  });
+};
+
 
 /***/ })
 ],
