@@ -53,7 +53,8 @@ hr {
   align-items: center;
 }
 
-#refresh, #removeicon,
+#refresh,
+#removeicon,
 .material-icons {
   color: gray;
   font-size: 1.2rem;
@@ -61,7 +62,8 @@ hr {
   cursor: pointer;
 }
 
-.save, .edit{
+.save,
+.edit {
   margin-right: 1%;
   color: rgb(34, 45, 79);
 }
@@ -114,6 +116,6 @@ input.check {
   background: transparent;
 }
 
-.save{
+.save {
   display: none;
 }
