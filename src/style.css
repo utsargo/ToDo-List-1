@@ -55,13 +55,16 @@ hr {
 
 #refresh,
 #moreicon,
+#removeicon,
 .material-icons {
   color: gray;
   font-size: 1.2rem;
   margin-right: 3%;
   cursor: pointer;
 }
-button, input[type=checkbox]{
+
+button,
+input[type=checkbox] {
   cursor: pointer;
 }
 
@@ -92,14 +95,18 @@ input {
   font-size: 1rem;
   display: flex;
   align-items: center;
+  justify-content: space-around;
 }
 
 input.check {
   width: 1rem;
   height: 1rem;
-  margin-right: 2%;
 }
 
 .listitem {
-  width: 87%;
+  width: 80%;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: transparent;
 }
