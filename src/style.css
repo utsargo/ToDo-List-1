@@ -53,14 +53,17 @@ hr {
   align-items: center;
 }
 
-#refresh,
-#moreicon,
-#removeicon,
+#refresh, #removeicon,
 .material-icons {
   color: gray;
   font-size: 1.2rem;
   margin-right: 3%;
   cursor: pointer;
+}
+
+.save, .edit{
+  margin-right: 1%;
+  color: rgb(34, 45, 79);
 }
 
 button,
@@ -109,4 +112,8 @@ input.check {
   outline: none;
   font-size: 1rem;
   background: transparent;
+}
+
+.save{
+  display: none;
 }
