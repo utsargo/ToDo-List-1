@@ -59,6 +59,10 @@ hr {
   color: gray;
   font-size: 1.2rem;
   margin-right: 3%;
+  cursor: pointer;
+}
+button, input[type=checkbox]{
+  cursor: pointer;
 }
 
 .titleholder {

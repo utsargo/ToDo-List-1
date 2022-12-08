@@ -1,64 +1,12 @@
- /* eslint-disable */
-
-"use strict";
 (self["webpackChunkto_do_list"] = self["webpackChunkto_do_list"] || []).push([[0],[
 /* 0 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-
-
-
-const ListData = document.querySelector('.lists');
-
-const ToDoData = [
-    {
-        index: 0,
-        descripttion: "Wash Laptop with Detergent",
-        completed: false,
-    },
-    {
-        index: 1,
-        descripttion: "Inject Bug in Facebook Server",
-        completed: false,
-    },
-    {
-        index: 3,
-        descripttion: "Chat with Aliens",
-        completed: false,
-    },
-    {
-        index: 2,
-        descripttion: "Hack someone's Bank Account",
-        completed: false,
-    },
-    {
-        index: 4,
-        descripttion: "Wait for PR to be Approved",
-        completed: false,
-    },
-]
-
-ToDoData.sort((a, b) => a.index - b.index);
-
-ListData.innerHTML = ""
-
-
-    
-    ToDoData.forEach(element => {
-        ListData.innerHTML +=`
-        <div class="mainlist">
-        <input type="checkbox" class="check">
-        <p class="listitem">${element.descripttion}</p>
-        <i id="moreicon" class="fa-solid fa-ellipsis-vertical"></i>
-        </div>
-       `
-    });
-  
-
-
-
+/* harmony import */ var _modules_add_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
+/* harmony import */ var _modules_add_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_add_js__WEBPACK_IMPORTED_MODULE_1__);
 
 
 
@@ -68,6 +16,7 @@ ListData.innerHTML = ""
 /* 1 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -118,6 +67,7 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 /* 2 */
 /***/ ((module) => {
 
+"use strict";
 
 
 var stylesInDOM = [];
@@ -227,6 +177,7 @@ module.exports = function (list, options) {
 /* 3 */
 /***/ ((module) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -302,6 +253,7 @@ module.exports = domAPI;
 /* 4 */
 /***/ ((module) => {
 
+"use strict";
 
 
 var memo = {};
@@ -346,6 +298,7 @@ module.exports = insertBySelector;
 /* 5 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -363,6 +316,7 @@ module.exports = setAttributesWithoutAttributes;
 /* 6 */
 /***/ ((module) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -379,6 +333,7 @@ module.exports = insertStyleElement;
 /* 7 */
 /***/ ((module) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -400,6 +355,7 @@ module.exports = styleTagTransform;
 /* 8 */
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -422,6 +378,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, "* {\n  font-family: sans-serif;\n}\n\n
 /* 9 */
 /***/ ((module) => {
 
+"use strict";
 
 
 module.exports = function (i) {
@@ -432,6 +389,7 @@ module.exports = function (i) {
 /* 10 */
 /***/ ((module) => {
 
+"use strict";
 
 
 /*
@@ -517,6 +475,42 @@ module.exports = function (cssWithMappingToString) {
   };
   return list;
 };
+
+/***/ }),
+/* 11 */
+/***/ (() => {
+
+const ListData = document.querySelector(".lists");
+const InputField = document.querySelector(".add-to-list");
+let ToDoData = [];
+
+class CreateUI {
+  static addToList() {
+    ListData.innerHTML = "";
+    ToDoData.forEach((element) => {
+      ListData.innerHTML += `
+                  <div class="mainlist">
+                  <input type="checkbox" class="check">
+                  <p class="listitem">${element.description}</p>
+                  <i id="moreicon" class="fa-solid fa-ellipsis-vertical"></i>
+                  </div>
+                 `;
+    });
+  }
+}
+
+InputField.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    let IndexNo = ToDoData.length === 0 ? 0 : ToDoData.length;
+    let NewTodo = {};
+    NewTodo["index"] = IndexNo;
+    NewTodo["description"] = InputField.value;
+    NewTodo["completed"] = false;
+    ToDoData.push(NewTodo);
+    CreateUI.addToList();
+    InputField.value = ''
+  }
+});
 
 /***/ })
 ],
