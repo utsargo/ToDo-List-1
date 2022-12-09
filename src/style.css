@@ -81,12 +81,17 @@ input[type=checkbox] {
 .clear-all {
   width: 100%;
   margin: 0;
-  padding: 2%;
+  padding: 3%;
   text-align: center;
   background: rgba(239, 239, 239, 0.887);
   border: none;
   color: rgb(97, 97, 97);
   font-size: 1rem;
+}
+
+.clear-all:hover {
+  text-decoration: underline;
+  color: #000;
 }
 
 h3,
