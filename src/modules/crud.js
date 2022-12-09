@@ -1,5 +1,6 @@
 const ListData = document.querySelector(".lists");
 const InputField = document.querySelector(".add-to-list");
+const ClearAll = document.querySelector(".clear-all");
 
 let completed = false,
   index = 0;
@@ -30,18 +31,59 @@ InputField.addEventListener("keypress", (e) => {
 function addToList() {
   ListData.innerHTML = "";
   ToDoData.forEach((element) => {
-    ListData.innerHTML += `
-  <div class="mainlist">
-  <input type="checkbox" class="check">
-  <input class="listitem" id="list${element.index}" value="${element.description}" readonly>
-  <i class="fa-solid fa-pen-to-square edit " id="edit${element.index}" onclick="editList(${element.index});"></i>
-       <i class="fa-solid fa-floppy-disk save hide" id="save${element.index}" onclick="saveList(${element.index});"></i>
-  <i id="removeicon" onclick="Remove(${element.index});" class="fa-solid fa-trash"></i>
-  </div>
- `;
+
+
+    if (element.completed == true) {
+      ListData.innerHTML += `
+      <div class="mainlist">
+      <input type="checkbox" class="check" id="check${element.index}" onclick="Check(${element.index});" checked>
+      <input class="listitem" id="list${element.index}" value="${element.description}" readonly>
+      <i class="fa-solid fa-pen-to-square edit " id="edit${element.index}" onclick="editList(${element.index});"></i>
+           <i class="fa-solid fa-floppy-disk save hide" id="save${element.index}" onclick="saveList(${element.index});"></i>
+      <i id="removeicon" onclick="Remove(${element.index});" class="fa-solid fa-trash"></i>
+      </div>
+     `;
+    }
+    else {
+      ListData.innerHTML += `
+      <div class="mainlist">
+      <input type="checkbox" class="check" id="check${element.index}" onclick="Check(${element.index});">
+      <input class="listitem" id="list${element.index}" value="${element.description}" readonly>
+      <i class="fa-solid fa-pen-to-square edit " id="edit${element.index}" onclick="editList(${element.index});"></i>
+           <i class="fa-solid fa-floppy-disk save hide" id="save${element.index}" onclick="saveList(${element.index});"></i>
+      <i id="removeicon" onclick="Remove(${element.index});" class="fa-solid fa-trash"></i>
+      </div>
+     `;
+    }
     InputField.value = "";
   });
 }
+
+
+window.Check = (index) => {
+  const CheckIfChecked = document.getElementById("check" + index + "");
+  const specList = document.getElementById("list" + index + "");
+  if (CheckIfChecked.checked) {
+    specList.style.textDecoration = 'line-through'
+    specList.style.color = 'gray'
+    // CheckIfChecked.toggleAttribute('checked', true)
+    let storedData = localStorage.getItem("To-Do");
+    ToDoData = JSON.parse(storedData);
+    ToDoData[index].completed = true;
+    localStorage.setItem("To-Do", JSON.stringify(ToDoData));
+    addToList();
+  }
+  else {
+    specList.style.textDecoration = 'none'
+    specList.style.color = 'inherit'
+    let storedData = localStorage.getItem("To-Do");
+    ToDoData = JSON.parse(storedData);
+    ToDoData[index].completed = false;
+    localStorage.setItem("To-Do", JSON.stringify(ToDoData));
+    addToList();
+  }
+}
+
 
 window.editList = (index) => {
   const editBtn = document.getElementById("edit" + index + "");
@@ -89,15 +131,18 @@ window.onload = () => {
   if (localStorage.getItem("To-Do")) {
     ToDoData = JSON.parse(localStorage.getItem("To-Do"));
   }
-  ToDoData.forEach((element) => {
-    ListData.innerHTML += `
-    <div class="mainlist">
-    <input type="checkbox" class="check">
-    <input class="listitem" id="list${element.index}" value="${element.description}" readonly>
-    <i class="fa-solid fa-pen-to-square edit " id="edit${element.index}" onclick="editList(${element.index});"></i>
-         <i class="fa-solid fa-floppy-disk save hide" id="save${element.index}" onclick="saveList(${element.index});"></i>
-    <i id="removeicon" onclick="Remove(${element.index});" class="fa-solid fa-trash"></i>
-    </div>
-   `;
-  });
+  addToList()
 };
+
+ClearAll.addEventListener('click', () => {
+  console.log('clicked')
+  let storedData = localStorage.getItem("To-Do");
+  ToDoData = JSON.parse(storedData);
+  let ClearedData = ToDoData.filter((element) => element.completed === false);
+  ToDoData = ClearedData;
+  for (let i = 0; i < ToDoData.length; i++) {
+    ToDoData[i].index = i;
+  }
+  localStorage.setItem("To-Do", JSON.stringify(ToDoData));
+  addToList();
+})
